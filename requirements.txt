@@ -1,0 +1,10 @@
+Django==4.2.5           # Replace with your Django version
+djangorestframework==3.14.0  # If you're using DRF for APIs
+Pillow==9.3.0           # For handling image uploads
+stripe==3.0.0           # If using Stripe for payments
+django-crispy-forms==2.0  # For better form handling in Django
+gunicorn==20.1.0        # For deployment (if using gunicorn server)
+psycopg2==2.9.6         # If using PostgreSQL (omit if not using)
+mysqlclient==2.1.0      # If using MySQL (omit if not using)
+django-allauth==0.52.0  # For user authentication and social login
+django-debug-toolbar==4.1.0  # For debugging in development (optional)
