@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Checkout page {% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="container-fluid ">
+<div class="row m-5 text-success text-center" style="padding-left:400px; height:400px; width:800px;" >
+    <img src="{% static 'images/7efs.gif' %}"/>
+    <h1 >Your Order Successfully Placed</h1>
+    <a class="btn btn-warning" href="{% url 'product' %}" ><b>OK</b></a>
+</div>
+</div>
+
+
+
+
+{% endblock %}

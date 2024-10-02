@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}confirm page {% endblock %}
+{% block content %}
+ <div class="row mt-4" >
+     <div class="col-sm-4">
+        <div class="card" style="width: 22rem;">
+  <img src="{{product.image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h1 class="card-text" > {{product.name}} </h1>
+    <h4 class="card-text text-primary" > {{product.desc}} </h4>
+  </div>
+</div>
+
+     </div>
+     <div class="col-sm-8">
+         <h2 class="card-text ">Product Details </h2>
+         <h4 class="card-text text-primary"> {{product.name}} </h4>
+         <h4 class="card-text text-primary">{{product.desc}} </h4>
+         <h4 class="card-text text-info">Rs. {{product.price}} </h4>
+         <h3 class="card-text text-success" > Available </h3>
+         <h2 class="card-text">Customer Details</h2>
+         <h5 class="card-text">Name    : {{customer.name}} </h5>
+         <h5 class="card-text">Contact : {{customer.emailaddress}} </h5>
+         <h5 class="card-text">Contact : {{customer.contactno}} </h5>
+         <h5 class="card-text">Address : {{customer.address}} </h5>
+         <h5 class="card-text">Pincode : {{customer.pincode}} </h5>
+{% if method == "add_to_cart" %}
+{% for item in cart %}
+{{item.product.name}}
+{% endfor %}
+<a href="{% url 'payment' %}">Confirm Order</a>
+{% else %}
+<form action="{% url 'payment' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="productid" value="{{product.id}}"  hidden>
+    <input type="text" name="email" value="{{customer.emailaddress}}"  hidden>
+    <input type="text" name="price" value="{{product.price}}" hidden>
+    <input type="text" name="address" value="{{customer.address}}" hidden>
+    <input type="text" name="pincode" value="{{customer.pincode}}" hidden>
+    <input type="text" name="quantity" value="1"  hidden><br><br>
+    <button type="submit" class="btn btn-warning"> Checkout</button>
+</form>
+
+{% endif %}
+ </div>
+
+ </div>
+
+
+{% endblock %}
