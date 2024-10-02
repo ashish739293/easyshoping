@@ -127,8 +127,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Directory where Django wi
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files (Uploaded by users)
-MEDIA_URL = '/uploads/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')  # Ensure this is where uploaded files are stored
+MEDIA_URL = '/newproducts/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'newproducts')  # Ensure this is where uploaded files are stored
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
