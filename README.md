@@ -26,11 +26,11 @@ An e-commerce platform built with **Django**, offering user authentication, prod
    cd easyshoping
 
 ## Run migrations and create a superuser:
-
-python manage.py migrate
-python manage.py createsuperuser
+```bash
+     python manage.py migrate
+     python manage.py createsuperuser
 
 
 ## Run the server:
-
-python manage.py runserver
+```bash
+  python manage.py runserver
